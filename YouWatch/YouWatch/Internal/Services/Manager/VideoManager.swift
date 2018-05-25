@@ -9,9 +9,8 @@ enum YouWatchResult<T: Codable> {
 }
 
 class VideoManager {
-    private var network: NetworkAPIService = NetworkAPIService()
+    private var network = NetworkAPIService()
     var videos : [DetailInfo] = []
-    
     
     func searchVideo(videoName:String, key: String, completion: @escaping block<Video>) {
         network.search(videoName: videoName, key: key) { (requestResult) in

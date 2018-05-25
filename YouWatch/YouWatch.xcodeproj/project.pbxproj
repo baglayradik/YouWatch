@@ -194,7 +194,6 @@
 				C2C0534120B5DFB800227B27 /* Context */,
 				C2C0533620B468EB00227B27 /* Manager */,
 				C2C0531D20B3A81700227B27 /* Network */,
-				C2C3354920B6B5570047CE82 /* Utils */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -275,13 +274,6 @@
 				C2C0534220B5DFC400227B27 /* Context.swift */,
 			);
 			path = Context;
-			sourceTree = "<group>";
-		};
-		C2C3354920B6B5570047CE82 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		E9182185377F3D7286F494EE /* Frameworks */ = {

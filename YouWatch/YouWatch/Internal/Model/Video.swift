@@ -10,5 +10,4 @@ struct Video: Codable {
     let pageInfo: PageInfo
     let items: [DetailInfo]
 
-    
 }

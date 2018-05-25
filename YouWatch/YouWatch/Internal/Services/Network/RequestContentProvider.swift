@@ -17,9 +17,7 @@ enum RequestContentProvider {
     
     var method: methodType {
         switch self {
-        case .searchVideo:
-            return .get
-        case .loadVideo:
+        case .searchVideo, .loadVideo:
             return .get
         }
     }
@@ -55,9 +53,7 @@ enum RequestContentProvider {
         var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = method.rawValue
         switch self {
-        case .searchVideo:
-            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        case .loadVideo:
+        case .searchVideo,.loadVideo:
             urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         return urlRequest

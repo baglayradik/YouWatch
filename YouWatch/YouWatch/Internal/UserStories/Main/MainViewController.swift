@@ -9,8 +9,13 @@ class ViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var viewMore: UIView!
     
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(ViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.red
+        return refreshControl
+    }()
     private var searchController: UISearchController?
-    private var refreshControl:UIRefreshControl!
     private var context: Context?
     
     override func viewDidLoad() {
@@ -18,11 +23,11 @@ class ViewController: UIViewController {
         context = Context.createStorageContext()
         setupNavigationBar()
         setupSearchController()
+        self.tableView.addSubview(self.refreshControl)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
 }
 
@@ -40,11 +45,9 @@ extension ViewController: UITableViewDataSource {
             guard let url  = URL(string: urlString) else {
                 return cell
             }
-            // DispatchQueue.main.async {
             cell.titleLabel?.text = video.snippet.title
             cell.descriptionLabel?.text = video.snippet.description
             cell.thumbnails.downloadImageFrom(link: url.absoluteString, contentMode: UIViewContentMode.scaleToFill)
-            //  }
         }
         return cell
     }
@@ -71,17 +74,8 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         searchController?.dismiss(animated: true, completion: nil)
-        context?.videoManager.searchVideo(videoName: searchBar.text!, key:  "AIzaSyCuBInTJZNIGX-xMegSfj2WsK_vAj_NRqs") { (result) in
-            switch result {
-            case .success( _):
-                DispatchQueue.main.async {
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self.tableView.reloadData()
-                }
-            case .failure( _):
-                break
-            }
-        }
+        searchVideo(with: searchBar)
+        
     }
 }
 
@@ -106,9 +100,29 @@ extension ViewController {
 }
 
 //MARK:- PULL TO REFRESH
+extension ViewController {
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        searchVideo(with: (searchController?.searchBar)!)
+    }
+}
 
 extension ViewController {
-
+    private func searchVideo(with searchBar:UISearchBar) {
+        context?.videoManager.searchVideo(videoName: searchBar.text!, key:  "AIzaSyCuBInTJZNIGX-xMegSfj2WsK_vAj_NRqs") { (result) in
+            switch result {
+            case .success( _):
+                DispatchQueue.main.async {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    self.tableView.reloadData()
+                    self.refreshControl.endRefreshing()
+                }
+            case .failure( _):
+                break
+            }
+        }
+    }
 }
 
 

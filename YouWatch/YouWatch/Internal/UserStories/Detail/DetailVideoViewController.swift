@@ -49,8 +49,7 @@ extension DetailVideoViewController {
     private func setupLabel() {
         titleLabel?.text = videoInfo?.snippet.title
         chanelTitleLabel?.text = videoInfo?.snippet.channelTitle
-        
-        chanelTitleLabel.text =  videoInfo?.snippet.channelTitle
+        publishLabel?.text =  String.dateforString(string: (videoInfo?.snippet.publishedAt)!)
         descriptionLabel?.text = videoInfo?.snippet.description
     }
 }

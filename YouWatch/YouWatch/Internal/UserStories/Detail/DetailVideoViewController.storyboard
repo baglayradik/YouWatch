@@ -6,62 +6,9 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="M7j-x8-V61">
-            <objects>
-                <viewController id="dip-bx-1va" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BpH-SB-1Ge">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNS-Vg-XTu">
-                                <rect key="frame" x="0.0" y="70" width="375" height="250"/>
-                                <subviews>
-                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-fd-tzU">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </webView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="bkq-fd-tzU" firstAttribute="leading" secondItem="aNS-Vg-XTu" secondAttribute="leading" id="2Tx-Zz-bNv"/>
-                                    <constraint firstAttribute="height" constant="250" id="e4Q-Qa-SlI"/>
-                                    <constraint firstAttribute="bottom" secondItem="bkq-fd-tzU" secondAttribute="bottom" id="h27-Of-gzG"/>
-                                    <constraint firstAttribute="trailing" secondItem="bkq-fd-tzU" secondAttribute="trailing" id="pUv-45-GH7"/>
-                                    <constraint firstItem="bkq-fd-tzU" firstAttribute="top" secondItem="aNS-Vg-XTu" secondAttribute="top" id="wW0-au-lZe"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc9-nQ-mid">
-                                <rect key="frame" x="0.0" y="8" width="375" height="54"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="iYF-RB-5Wl" firstAttribute="trailing" secondItem="Sc9-nQ-mid" secondAttribute="trailing" id="caL-G8-cpm"/>
-                            <constraint firstItem="Sc9-nQ-mid" firstAttribute="top" secondItem="BpH-SB-1Ge" secondAttribute="top" constant="8" id="eWG-BU-H5m"/>
-                            <constraint firstItem="aNS-Vg-XTu" firstAttribute="top" secondItem="iYF-RB-5Wl" secondAttribute="top" constant="50" id="fhW-OQ-2Hw"/>
-                            <constraint firstItem="aNS-Vg-XTu" firstAttribute="top" secondItem="Sc9-nQ-mid" secondAttribute="bottom" constant="8" id="t3T-tg-f2K"/>
-                            <constraint firstItem="Sc9-nQ-mid" firstAttribute="leading" secondItem="iYF-RB-5Wl" secondAttribute="leading" id="vW9-9D-xPU"/>
-                            <constraint firstItem="aNS-Vg-XTu" firstAttribute="leading" secondItem="iYF-RB-5Wl" secondAttribute="leading" id="wT3-2f-WJR"/>
-                            <constraint firstItem="iYF-RB-5Wl" firstAttribute="trailing" secondItem="aNS-Vg-XTu" secondAttribute="trailing" id="yBh-ba-p5n"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="iYF-RB-5Wl"/>
-                    </view>
-                    <connections>
-                        <outlet property="videoView" destination="aNS-Vg-XTu" id="LRj-db-sAF"/>
-                        <outlet property="videoWebView" destination="bkq-fd-tzU" id="gT4-Xg-bF5"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nhY-zZ-Gcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="341.60000000000002" y="-175.86206896551727"/>
-        </scene>
         <!--Detail Video View Controller-->
         <scene sceneID="Axx-7v-dPp">
             <objects>
@@ -236,7 +183,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGF-l7-YhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="-176"/>
+            <point key="canvasLocation" x="740" y="-177"/>
         </scene>
     </scenes>
 </document>
