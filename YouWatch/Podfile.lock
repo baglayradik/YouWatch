@@ -1,0 +1,16 @@
+PODS:
+  - PullToRefresher (3.0.2)
+
+DEPENDENCIES:
+  - PullToRefresher (~> 3.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PullToRefresher
+
+SPEC CHECKSUMS:
+  PullToRefresher: 25a367871a70b1da0b28e8e7cecceb4ef04f5f56
+
+PODFILE CHECKSUM: c1401967e16aa0d024c642ebd0bb53922d5d3b85
+
+COCOAPODS: 1.5.2
